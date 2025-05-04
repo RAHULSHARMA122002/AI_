@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: plum;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: white;
+            
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pending Requests</h1>
+    <div class="section">
+        {% for req in pending %}
+        <div class="card">
+            <form method="POST" action="/submit_answer">
+                <p><strong>Question:</strong> {{ req.question }}</p>
+                <input type="hidden" name="req_id" value="{{ req.id }}">
+                <textarea name="answer" placeholder="Type your answer here..."></textarea><br>
+                <button type="submit">Submit Answer</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h1>Resolved Requests</h1>
+    <div class="section">
+        {% for req in resolved %}
+        <div class="card">
+            <p><strong>Question:</strong> {{ req.question }}</p>
+            <p><strong>Answer:</strong> {{ req.answer }}</p>
+            <p><em>Resolved at:</em> {{ req.resolvedAt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
