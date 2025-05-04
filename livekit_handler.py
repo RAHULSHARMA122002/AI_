@@ -15,7 +15,7 @@ load_dotenv()
 class MockLiveKitRoom:
     async def get_audio_stream(self, duration=5, sample_rate=16000):
         """Record real audio from the microphone and return it as a stream."""
-        print(f"🎙️ Recording {duration} seconds of real audio...")
+        print(f" Recording {duration} seconds of real audio...")
         audio = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
         sd.wait()  # Wait until recording is finished
 
