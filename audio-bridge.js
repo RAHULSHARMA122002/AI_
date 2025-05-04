@@ -24,7 +24,7 @@ async function fetchToken(identity, room) {
     autoSubscribe: true,
   });
 
-  console.log(`✅ Connected to LiveKit room: ${ROOM_NAME}`);
+  console.log(` Connected to LiveKit room: ${ROOM_NAME}`);
 
   const pySocket = new WebSocket(PYTHON_WS_URL);
 
@@ -33,7 +33,7 @@ async function fetchToken(identity, room) {
 
     room.on('trackSubscribed', (track, publication, participant) => {
       if (track.kind === 'audio') {
-        console.log(`🎤 Subscribed to ${participant.identity}'s audio track`);
+        console.log(` Subscribed to ${participant.identity}'s audio track`);
 
         // Listen to raw audio data and forward to Python
         track.onData = (data) => {
