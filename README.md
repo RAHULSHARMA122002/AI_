@@ -8,7 +8,7 @@ User —(voice)→ AI Assistant (local LLM) —→
 
 The system uses two models: one is the local model and the other is the Cloud LLM. The local model is trained with data stored in the knowledge_json file.
 
-The Cloud LLM is powered by DeepSeek AI.
+The Cloud LLM is powered by Open Router.
 
 Mock LiveKit: Currently, you’re using a mock version of LiveKit for simulating employee interactions, but the functionality can be replaced with actual LiveKit when ready.
 
@@ -23,4 +23,4 @@ API Keys
 LIVE_KIT_API
 LIVE_KIT_SRCRET
 LIVE_KIT_URL
-OPEN_AI_API
+OPEN_Router_API
