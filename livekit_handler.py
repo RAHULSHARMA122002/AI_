@@ -23,12 +23,12 @@ class MockLiveKitRoom:
         audio_bytes = io.BytesIO()
         write(audio_bytes, sample_rate, audio)
         audio_bytes.seek(0)
-        print("✅ Audio recorded and ready.")
+        print(" Audio recorded and ready.")
         return audio_bytes
 
 class MockLiveKitClient:
     async def connect(self, room_name):
-        print(f"✅ [Mock] Connected to room: {room_name}")
+        print(f" [Mock] Connected to room: {room_name}")
         return MockLiveKitRoom()
 
 # Imports for STT, TTS, and Assistant
